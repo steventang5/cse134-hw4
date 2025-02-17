@@ -1,0 +1,146 @@
+:root {
+  --background-color: #303030;
+  --text-color: #cccccc;
+  --link-color: #8ab4f8;
+  --font-main: 'Roboto', Arial, sans-serif;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+
+  font-size: 1rem;
+
+  header {
+    display: flex;          
+    gap: 1rem;              
+
+
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+    padding: 1rem 0;
+
+    /* Example of using the experimental :has() selector */
+    &:has(img) {
+      border: 2px solid var(--text-color);
+      padding: 1rem;
+    }
+
+    #header-info {
+      margin-bottom: 1rem;
+    }
+    
+    #profile-pic {
+      img{
+        width:200px;
+        height:200px;
+        flex-shrink: 0;
+        border-radius: 50%;
+      }
+    }
+    nav {
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+      a {
+        display: inline-block;
+        transition: color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+
+  main {
+    display: grid;                 
+    grid-template-columns: 1fr;    
+    gap: 2rem;                     
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  a {
+    color: var(--link-color);
+  }
+}
+
+#footer-email {
+  color: color-mix(in srgb, #ffffff 50%, var(--link-color) 50%);
+}
+
+
+@media (min-width: 600px) {
+  body {
+    font-size: 1.1rem;  
+    main {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+      padding: 2rem;
+    }
+  }
+  
+  header {
+    padding: 1.5rem 0;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+
+  body {
+    font-size: 1.2rem;  
+    main {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+      padding: 2rem;
+    }
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;  
+    padding: 2rem 1rem;
+  }
+
+  
+  header nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
+
+}

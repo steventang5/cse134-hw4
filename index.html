@@ -3,21 +3,31 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <title>Steven Tang - Portfolio</title>
     </head>
 
     <body>
         <header>
-            <h1>Steven Tang</h1>
-            <p>Undergrad @ UCSD</p>
-
-            <img src="profile.png" alt = "Steven Tang's temporary Profile Picture" width="200">
+            <div id = "header-info">
+                <h1>Steven Tang</h1>
+                <p>Undergrad @ UCSD</p>
+            </div>
+            <picture id="profile-pic">
+                <source srcset="profile/highProfile.png">
+                <img src="profile/lowProfile.jpg" alt = "Steven Tang's temporary Profile Picture">
+            </picture>
+            
 
             <nav>
-                <a target = "_blank" href="resume.pdf" id ="resume">resume</a> 
-                <a target = "_blank" href="mailto:stt012@ucsd.edu" id="email">email</a>
-                <a target = "_blank" href="https://github.com/steventang5" id ="github">github</a>
-                <a target = "_blank" href="https://www.linkedin.com/in/steven-tang-928667309/" id="linkedin">linkedin</a>
+                <a target = "_blank" href="resume.pdf" id ="resume"><img src = "nav/resume.svg" alt="link to resume"></a> 
+                <a target = "_blank" href="mailto:stt012@ucsd.edu" id="email"><img src = "nav/email.svg" alt="email me"></a>
+                <a target = "_blank" href="https://github.com/steventang5" id ="github"><img src = "nav/github.svg" alt="My github page"></a>
+                <a target = "_blank" href="https://www.linkedin.com/in/steven-tang-928667309/" id="linkedin"><img src = "nav/linkedin.svg" alt="My linkedin page"></a>
             </nav>
         </header>
         
@@ -28,8 +38,9 @@
                 <h2>Experience</h2>
                 <article class = "experience-item">
                     <h3>2022 - 2023</h3>
-                    <h3>Teaching Assistant</h3>
+                    <h3 class = "role">Teaching Assistant</h3>
                     <p>University of California, Riverside | Riverside, CA</p>
+                    <img src="ucr.svg" alt="ucr logo">
                     <p>I served as a Teaching Assistant, where I led bi-weekly lectures for over 60 students, facilitated interactive discussions to reinforce key concepts, held regular office hours for personalized guidance, and collaborated with faculty to enhance both the curriculum and teaching methods.</p>
                 </article>
             </section>
@@ -51,7 +62,7 @@
 
 
         <footer>
-            <p>Contact: <a href="mailto:stt012@ucsd.edu">stt012@ucsd.edu</a></p>
+            <p>Contact: <a id="footer-email" href="mailto:stt012@ucsd.edu">stt012@ucsd.edu</a></p>
             <p>&copy; 2025 Steven Tang. All rights reserved.</p>
         </footer>
           
