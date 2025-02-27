@@ -62,8 +62,29 @@
 
 
         <footer>
-            <p>Contact: <a id="footer-email" href="mailto:stt012@ucsd.edu">stt012@ucsd.edu</a></p>
-            <p>&copy; 2025 Steven Tang. All rights reserved.</p>
+            <h2 id="footer-contact">Contact Me</h2>
+
+            <form action = "https://httpbin.org/post" method = "post">
+                <label for = "email">Email:
+                    <input type = "email" name ="email" id="email" required="required">
+                </label>
+
+                <label for = "name">Name:
+                    <input type = "text" name ="name" id="name">
+                </label>
+
+                <label for = "comments">Comments:
+                    <textarea name="comments" id="comments"></textarea>
+                </label>
+                
+                <input type = "hidden" name = "possible_bot" value = "true">
+                <button type="submit" id = "submit-button">Submit</button>
+
+                <output id="error" aria-live="assertive"></output>
+                <output id="info" aria-live="polite"></output>
+
+            </form>
+            <p id = "copyright">&copy; 2025 Steven Tang. All rights reserved.</p>
         </footer>
           
     </body>
