@@ -3,12 +3,22 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="icon" href="favicon.ico">
+        <link rel="icon" href="icons/favicon.ico">
         <link rel="stylesheet" href="styles.css">
+        <script defer src ="script.js"></script>
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
         <title>Steven Tang - Portfolio</title>
+
+        <noscript>
+            <style>
+              #charCount { display: none; }
+            </style>
+        </noscript>
+          
     </head>
 
     <body>
@@ -25,7 +35,7 @@
 
             <nav>
                 <a target = "_blank" href="resume.pdf" id ="resume"><img src = "nav/resume.svg" alt="link to resume"></a> 
-                <a target = "_blank" href="mailto:stt012@ucsd.edu" id="email"><img src = "nav/email.svg" alt="email me"></a>
+                <a target = "_blank" href="mailto:stt012@ucsd.edu" id="emailMe"><img src = "nav/email.svg" alt="email me"></a>
                 <a target = "_blank" href="https://github.com/steventang5" id ="github"><img src = "nav/github.svg" alt="My github page"></a>
                 <a target = "_blank" href="https://www.linkedin.com/in/steven-tang-928667309/" id="linkedin"><img src = "nav/linkedin.svg" alt="My linkedin page"></a>
             </nav>
@@ -40,7 +50,7 @@
                     <h3>2022 - 2023</h3>
                     <h3 class = "role">Teaching Assistant</h3>
                     <p>University of California, Riverside | Riverside, CA</p>
-                    <img src="ucr.svg" alt="ucr logo">
+                    <img src="icons/ucr.svg" alt="ucr logo">
                     <p>I served as a Teaching Assistant, where I led bi-weekly lectures for over 60 students, facilitated interactive discussions to reinforce key concepts, held regular office hours for personalized guidance, and collaborated with faculty to enhance both the curriculum and teaching methods.</p>
                 </article>
             </section>
@@ -64,9 +74,10 @@
         <footer>
             <h2 id="footer-contact">Contact Me</h2>
 
-            <form action = "https://httpbin.org/post" method = "post">
+            <form action = "https://httpbin.org/post" method = "post" taget="_blank" id="conatct">
                 <label for = "email">Email:
-                    <input type = "email" name ="email" id="email" required="required">
+                    <input type = "email" name ="email" id="email" required="required" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                    >
                 </label>
 
                 <label for = "name">Name:
@@ -74,18 +85,24 @@
                 </label>
 
                 <label for = "comments">Comments:
-                    <textarea name="comments" id="comments"></textarea>
+                    <textarea name="comments" id="comments" maxlength="1000"></textarea>
+                    <span id="charCount">1000/1000</span>
+
                 </label>
                 
                 <input type = "hidden" name = "possible_bot" value = "true">
+                <input type="hidden" name="form-errors" value="">
+
                 <button type="submit" id = "submit-button">Submit</button>
 
+                
                 <output id="error" aria-live="assertive"></output>
                 <output id="info" aria-live="polite"></output>
 
             </form>
             <p id = "copyright">&copy; 2025 Steven Tang. All rights reserved.</p>
         </footer>
-          
+        <script src ="script.js"></script>
+
     </body>
 </html>
