@@ -5,6 +5,16 @@
   --font-main: 'Roboto', Arial, sans-serif;
 }
 
+body.light {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #1a0dab;
+}
+
+#theme-switcher { 
+  background-color: var(--background-color);
+}
+
 body {
 
   background-color: var(--background-color);

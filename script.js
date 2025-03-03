@@ -71,6 +71,31 @@ form.addEventListener("submit", function(){
         .map(err => `${err.field}: ${err.message}`)
         .join("; ");
     }
-  });
+});
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+
+function applyTheme(){
+  const currentTheme = localStorage.getItem("theme") || "dark";
+  if(currentTheme === "light"){
+    document.body.classList.add("light");
+    themeIcon.textContent = "☀️"; 
+  }else{
+    document.body.classList.remove("light");
+    themeIcon.textContent = "🌙"; 
+  }
+}
+applyTheme();
+
+themeToggle.addEventListener("click", function(){
+  document.body.classList.toggle("light");
+  
+  const newTheme = document.body.classList.contains("light") ? "light" : "dark";
+  localStorage.setItem("theme", newTheme);
+  
+  themeIcon.textContent = newTheme === "light" ? "☀️" : "🌙";
+});
+
 
 
